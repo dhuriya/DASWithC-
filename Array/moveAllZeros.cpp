@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+#include <algorithm>
 using namespace std;
 // using temporay array
 void pushZerosToEnd(vector<int> &arr){
@@ -22,9 +23,44 @@ void pushZerosToEnd(vector<int> &arr){
     }
     
 }
+// Two Traversals
+void TwoTraversalApproach(vector<int>& arr){
+    //count of non-zero 
+    int count = 0;
+    for(int i=0;i<arr.size();i++){
+        if(arr[i] !=0){
+            arr[count++]=arr[i];
+        }
+    }
+    // 
+    while (count<arr.size())
+    {
+        arr[count++] = 0;
+    }
+    
+}
+// One Travesal
+void OneTraversalApproach(vector<int>& arr){
+    int count = 0;
+    for (int i = 0; i < arr.size(); i++)
+    {
+        if(arr[i]!=0){
+            swap(arr[i],arr[count]);
+            count++;
+        }
+    }
+    
+}
+//Using Library Methods
+void stable_parition_lib(vector<int>& arr){
+    //stable_partition(arr.begin(),arr.end());
+}
 int main (){
     vector<int> arr = {1,2,0,4,3,0,5,0};
-    pushZerosToEnd(arr);
+    //pushZerosToEnd(arr);
+    //TwoTraversalApproach(arr);
+    //OneTraversalApproach(arr);
+    //stable_parition_lib(arr);
     for (int i = 0; i < arr.size(); i++)
     {
         cout<<arr[i]<< " ";
