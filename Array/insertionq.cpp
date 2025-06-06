@@ -15,6 +15,7 @@ vector<int> getInsertion(vector<int> &arr, vector<int> &arr2){
      for(int i = 0;i<ans.size();i++){
         cout<< ans[i] << " ";
     }
+}
 int main(){
     vector<int> arr = {1,2,2,2,3,4};
     vector<int> arr2 = {2,2,3,3};
