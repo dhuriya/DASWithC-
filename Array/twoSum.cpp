@@ -25,13 +25,29 @@ bool twoSum(vector<int> &arr, int target){
         return true;
     }
 }
+bool getTwosum(vector<int> &arr,int t){
+    for(int i = 0;i<arr.size();i++){
+        int c = t - arr[i];
+        for(int j = i+1;j<arr.size();j++){
+            if(arr[j]==c){
+                return true;
+            }
+        }
+    }
+    return false;
+}
 int main(){
     vector<int> arr = {1, 4, 45, 6, 10, 8};
-    int target = 16;
-    if(twoSum(arr,target)){
+    int target = 100;
+    if(getTwosum(arr,target)){
         cout<< "true";
     }else{
         cout<< "false";
     }
+    // if(twoSum(arr,target)){
+    //     cout<< "true";
+    // }else{
+    //     cout<< "false";
+    // }
     return 0;
 }
